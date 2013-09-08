@@ -17,10 +17,21 @@ $(document).ready(function() {
 			my_url,
 			function(data) {					
 				console.log(data);
+/*
+				for (var i = 0; i < 3; i++) 
+				{
+					var photo_id = data.photos.photo[i].id;
+					console.
+				}*/
+				
+				var id = data.photos.photo[0].id;
+				var farm = data.photos.photo[0].farm;
+				var secret = data.photos.photo[0].secret;
+				var server = data.photos.photo[0].server;
+				var photo_url = 'http://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg';
 
-
-				$("div#data").text(data.photos.photo[0].id);
-				console.log("getJSON has recieved" + input);
+				console.log('getJSON has recieved photo_url: ' + photo_url);
+				//$("div#data").text(data.photos.photo[0].id);	
 			}
 		);
 
