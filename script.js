@@ -12,17 +12,13 @@ $(document).ready(function() {
 		var my_url = initial_address + method + api_key + tags + format;
 		console.log(my_url);
 
+
 		$.get(
 			//make sure it gives back JSON
 			my_url,
 			function(data) {					
 				console.log(data);
-/*
-				for (var i = 0; i < 3; i++) 
-				{
-					var photo_id = data.photos.photo[i].id;
-					console.
-				}*/
+
 				
 				var id = data.photos.photo[0].id;
 				var farm = data.photos.photo[0].farm;
@@ -35,6 +31,7 @@ $(document).ready(function() {
 				$("#searched_photo").each(function() {
 					$(this).attr('src', photo_url)
 				})
+
 			}
 		);
 
