@@ -32,8 +32,8 @@ $(document).ready(function() {
 
 				console.log('getJSON has recieved photo_url: ' + photo_url);
 				//$("div#data").text(data.photos.photo[0].id);	
-				$("#searched_photo").html(function() {
-					var
+				$("#searched_photo").each(function() {
+					$(this).attr('src', photo_url)
 				})
 			}
 		);
